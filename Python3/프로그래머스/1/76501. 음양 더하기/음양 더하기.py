@@ -1,9 +1,9 @@
 def solution(absolutes, signs):
     result = 0
     
-    for i, value in enumerate(signs):
-        if value:
-            result += absolutes[i]
+    for absolute, sign in zip(absolutes, signs):
+        if sign:
+            result += absolute
         else:
-            result -= absolutes[i]
+            result -= absolute
     return result
