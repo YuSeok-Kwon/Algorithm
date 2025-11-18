@@ -1,11 +1,5 @@
 def solution(price, money, count):
-    total = 0
     
-    for i in range(1, count + 1):
-        total += price * i
-        
-    if money - total < 0:
-        return total - money
-    else :
-        return 0
+    return max(0, (price * (count * (count + 1) / 2) - money))
+    
 
