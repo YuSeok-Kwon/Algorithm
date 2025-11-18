@@ -1,5 +1,1 @@
-def solution(a, b):
-    answer = 0
-    for i in range(0, len(a)):
-        answer += a[i] * b[i]
-    return answer
+solution = lambda a, b : sum([x * y for x, y in zip(a,b)])
