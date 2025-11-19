@@ -1,4 +1,4 @@
-WITH rental_info AS (
+WITH rentalinfo AS (
     SELECT
         h.history_id
         , c.car_type
@@ -24,7 +24,7 @@ SELECT
         r.daily_fee * r.duration * (100 - COALESCE(p.discount_rate, 0)) / 100
       , 0) AS FEE
 FROM
-    rental_info r
+    rentalinfo r
 LEFT JOIN
     car_rental_company_discount_plan p
     ON r.duration_type = p.duration_type
