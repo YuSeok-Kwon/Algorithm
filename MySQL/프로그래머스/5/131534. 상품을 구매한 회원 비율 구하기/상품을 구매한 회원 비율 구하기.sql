@@ -26,8 +26,10 @@ SELECT
     year
     , month
     , purchased_users
-    , ROUND(purchased_users / (select totalcnt FROM join2021), 1) AS purchased_ratio
+    , ROUND(purchased_users / totalcnt, 1) AS purchased_ratio
 FROM
     purchased2021
-
-    
+CROSS JOIN
+    join2021
+ORDER BY
+    year, month
