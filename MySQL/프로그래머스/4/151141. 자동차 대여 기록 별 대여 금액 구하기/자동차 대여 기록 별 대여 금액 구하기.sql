@@ -24,7 +24,7 @@ only_truck AS (
     FROM
         car_rental_company_car c
     JOIN
-        car_rental_company_rental_history h ON c.car_id = h.car_id -- [수정] hitory -> history
+        car_rental_company_rental_history h ON c.car_id = h.car_id
     WHERE
         c.car_type = '트럭'
 )
