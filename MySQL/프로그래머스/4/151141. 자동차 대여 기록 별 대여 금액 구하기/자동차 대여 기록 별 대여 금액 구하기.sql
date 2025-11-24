@@ -1,34 +1,33 @@
-WITH rentalinfo AS (
+-- 코드를 입력하세요
+WITH discount AS (
     SELECT
-        h.history_id
-        , c.car_type
-        , c.daily_fee
-        , DATEDIFF(h.end_date, h.start_date) + 1 AS duration
+         c.car_type
+        , history_id
+        , daily_fee
+        , DATEDIFF(end_date, start_date) + 1 AS diffdate
         , CASE
-            WHEN DATEDIFF(h.end_date, h.start_date) + 1 >= 90 THEN '90일 이상'
-            WHEN DATEDIFF(h.end_date, h.start_date) + 1 >= 30 THEN '30일 이상'
-            WHEN DATEDIFF(h.end_date, h.start_date) + 1 >= 7  THEN '7일 이상'
-            ELSE NULL
-        END AS duration_type
+            WHEN DATEDIFF(end_date, start_date) + 1 >= 90 THEN '90일 이상'
+            WHEN DATEDIFF(end_date, start_date) + 1 >= 30 THEN '30일 이상'
+            WHEN DATEDIFF(end_date, start_date) + 1 >= 7 THEN '7일 이상'
+            ELSE '할인 없음'
+        END AS duration
     FROM
-        car_rental_company_rental_history h
+        car_rental_company_car c
     JOIN
-        car_rental_company_car c ON h.car_id = c.car_id
+        car_rental_company_rental_history h ON c.car_id = h.car_id
     WHERE
         c.car_type = '트럭'
 )
 
 SELECT
-    r.history_id
-    , ROUND(
-        r.daily_fee * r.duration * (100 - COALESCE(p.discount_rate, 0)) / 100
-      , 0) AS FEE
+    history_id
+    , ROUND(daily_fee * diffdate * (100 - COALESCE(p.discount_rate, 0)) * 0.01, 0) AS fee
 FROM
-    rentalinfo r
+    discount d
 LEFT JOIN
     car_rental_company_discount_plan p
-    ON r.duration_type = p.duration_type
-    AND r.car_type = p.car_type
+ON 
+    p.car_type = d.car_type
+    AND p.duration_type = d.duration
 ORDER BY
-    FEE DESC
-    , r.history_id DESC;
+    fee DESC, history_id DESC
