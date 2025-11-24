@@ -1,18 +1,21 @@
-WITH Milk_Yogurt_List AS (
-    SELECT
-        cart_id,
-        name
-    FROM
-        cart_products
-    WHERE
-        name IN ('Milk', 'Yogurt') 
+-- 코드를 입력하세요
+WITH MY as (
+SELECT
+    cart_id
+    , name
+FROM
+    cart_products
+WHERE
+    name in ('Milk','Yogurt')
 )
 
 SELECT
     cart_id
 FROM
-    Milk_Yogurt_List
+    my
 GROUP BY
     cart_id
 HAVING
-    COUNT(DISTINCT name) = 2; 
+    COUNT(DISTINCT name) = 2
+ORDER BY
+    cart_id
