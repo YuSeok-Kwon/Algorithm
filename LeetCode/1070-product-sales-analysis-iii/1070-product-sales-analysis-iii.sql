@@ -1,6 +1,6 @@
 SELECT
     product_id
-    , year first_year
+    , year AS first_year
     , quantity
     , price
 FROM
@@ -9,9 +9,9 @@ WHERE
     (product_id, year) IN (
         SELECT
             product_id
-            , year
+            , MIN(year)
         FROM
             Sales
-        WHERE
-            year = MIN(year)
+        GROUP BY
+            product_id
     )
