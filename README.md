@@ -10,6 +10,7 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 | [0596-classes-with-at-least-5-students](https://github.com/YuSeok-Kwon/Algorithm/tree/master/0596-classes-with-at-least-5-students) |
 | [0619-biggest-single-number](https://github.com/YuSeok-Kwon/Algorithm/tree/master/0619-biggest-single-number) |
 | [1045-customers-who-bought-all-products](https://github.com/YuSeok-Kwon/Algorithm/tree/master/1045-customers-who-bought-all-products) |
+| [1068-product-sales-analysis-i](https://github.com/YuSeok-Kwon/Algorithm/tree/master/1068-product-sales-analysis-i) |
 | [1148-article-views-i](https://github.com/YuSeok-Kwon/Algorithm/tree/master/1148-article-views-i) |
 | [1378-replace-employee-id-with-the-unique-identifier](https://github.com/YuSeok-Kwon/Algorithm/tree/master/1378-replace-employee-id-with-the-unique-identifier) |
 | [1683-invalid-tweets](https://github.com/YuSeok-Kwon/Algorithm/tree/master/1683-invalid-tweets) |
