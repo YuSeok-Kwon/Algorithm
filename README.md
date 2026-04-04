@@ -22,4 +22,5 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 | [1683-invalid-tweets](https://github.com/YuSeok-Kwon/Algorithm/tree/master/1683-invalid-tweets) |
 | [1729-find-followers-count](https://github.com/YuSeok-Kwon/Algorithm/tree/master/1729-find-followers-count) |
 | [1757-recyclable-and-low-fat-products](https://github.com/YuSeok-Kwon/Algorithm/tree/master/1757-recyclable-and-low-fat-products) |
+| [1934-confirmation-rate](https://github.com/YuSeok-Kwon/Algorithm/tree/master/1934-confirmation-rate) |
 <!---LeetCode Topics End-->
